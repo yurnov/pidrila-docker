@@ -7,5 +7,12 @@ RUN  apt update && \
 FROM python:3.8-slim
 COPY --from=gitclone /pidrila .
 RUN  pip install -r requirements.txt && \
-     mkdir /logs
-CMD  ["/bin/bash"]
+     groupadd pidrila && \
+     useradd -g pidrila pidrila && \
+     mkdir /logs && \
+     chown pidrila:pidrila /logs
+COPY docker-entrypoint.sh .
+RUN  chmod +755 docker-entrypoint.sh
+USER pidrila
+ENTRYPOINT [ "/docker-entrypoint.sh" ]
+CMD  ["--help"]

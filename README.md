@@ -1,6 +1,3 @@
-# pidrila-docker
-Docker image of Python Interactive Deepweb-oriented Rapid Intelligent Link Analyzer
-
 PIDRILA-Docker
 =========
 
@@ -16,14 +13,14 @@ Usage
 ------------
 
 ```
-docker run --rm -v $(pwd):/logs yurnov/pidrila:latest python3 pidrila.py -u https://google.com -M 256
+docker run --rm -v $(pwd):/logs yurnov/pidrila:latest -u https://google.com -M 256
 ```
 
 Options
 -------
 
 ```
-Usage: pidrila.py [OPTIONS]
+docker run --rm -v $(pwd):/logs yurnov/pidrila:latest [OPTIONS]
 
 Options:
   -U, --user-agent TEXT           User-Agent
@@ -42,7 +39,6 @@ Options:
   -u, --url TEXT                  Target URL, option is mutually exclusive
                                   with url_list  [required]
 
-  -l, --logs DIRECTORY            Destination directory for the logs
   --http-method [head|get]        HTTP method: GET or HEAD  [default: get]
   --help                          Show this message and exit.
 ```
@@ -75,6 +71,6 @@ Link to PIDRILA GitHub github.com/enemy-submarine/pidrila
 
 License
 -------
-Dockerfile: MIT Licence
-Debian linux: https://www.debian.org/legal/licenses/
-License: GNU General Public License, version 2
+- Dockerfile: MIT Licence
+- Debian linux: https://www.debian.org/legal/licenses/
+- Pidrila license: GNU General Public License, version 2
