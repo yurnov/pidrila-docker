@@ -13,5 +13,4 @@ if [[ -z {PIGRILA_UID} ]] && [[ -z {PIGRILA_GID} ]]; then
     fi
 fi
 
-exec "/usr/local/bin/python3 --version"
-#exec "/usr/local/bin/python3 /pidrila.py $@"
+exec /usr/local/bin/python3 pidrila.py $@
